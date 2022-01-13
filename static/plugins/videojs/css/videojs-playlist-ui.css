@@ -1,0 +1,304 @@
+.vjs-playlist {
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    list-style-type: none
+}
+
+.vjs-playlist img {
+    display: block;
+    height: auto;
+    width: auto
+}
+
+.vjs-playlist .vjs-playlist-item-list {
+    position: relative;
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.vjs-playlist .vjs-playlist-item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden
+}
+.vjs-playlist .vjs-playlist-item:hover .vjs-playlist-mask{
+    top:0;
+    opacity:1;
+}
+.vjs-playlist .vjs-playlist-thumbnail-placeholder {
+    background: #303030
+}
+
+.vjs-playlist .vjs-playlist-now-playing-text {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height:28px;
+    font-size:14px;
+    padding:0 8px;
+    color: #fff;
+    background-color:#198cff;
+    border-radius:0 0 6px 0;
+    z-index:2;
+}
+
+.vjs-playlist .vjs-playlist-duration {
+    position: absolute;
+    font-size: 12px;
+    line-height:18px;
+    top: 0;
+    left: 0;
+    padding: 0 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius:0 0 6px 0;
+    z-index:2;
+}
+
+.vjs-playlist .vjs-playlist-title-container {
+    box-sizing: border-box;
+    width: 100%;
+    padding:0;
+}
+
+.vjs-playlist .vjs-playlist-name {
+    display: block;
+    font-style: normal;
+    overflow: hidden;
+    line-height: 18px;
+    font-size:14px;
+
+    max-height: 36px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    position: absolute;
+    bottom:8px;
+    left:8px;
+    margin-right:8px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    z-index:2;
+}
+
+.vjs-playlist .vjs-playlist-description {
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.vjs-playlist .vjs-up-next-text {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height:28px;
+    font-size:14px;
+    padding:0 8px;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    z-index:2;
+}
+.vjs-playlist .vjs-playlist-time {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height:28px;
+    font-size:12px;
+    padding:0 8px;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    z-index:2;
+}
+.vjs-playlist .vjs-playlist-mask{
+    position: absolute;
+    left:0;
+    top:100%;
+    width:100%;
+    height:100%;
+    background: linear-gradient(to top, rgba(0,0,0,4) , rgba(0,0,0,0));
+    opacity: 0;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+}
+.vjs-playlist .vjs-up-next .vjs-up-next-text {
+    display: inline-block
+}
+
+.vjs-playlist .vjs-selected {
+    background-color: #141a21
+}
+
+.vjs-playlist .vjs-selected img {
+    opacity: .2
+}
+
+.vjs-playlist .vjs-selected .vjs-playlist-duration {
+    display: none
+}
+
+.vjs-playlist .vjs-selected .vjs-playlist-now-playing-text {
+    display: block
+}
+
+.vjs-playlist .vjs-selected .vjs-playlist-title-container {
+    text-shadow: none
+}
+
+.vjs-playlist-vertical {
+    overflow: hidden;
+}
+
+.vjs-playlist-vertical img {
+    width: 100%;
+    min-height: 54px
+}
+
+.vjs-playlist-vertical .vjs-playlist-item {
+    box-sizing: border-box;
+    padding: 8px;
+    width:25%;
+    height:140px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+.vjs-playlist-vertical .vjs-playlist-thumbnail {
+    display: block;
+    width: 100%;
+    height:100%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.vjs-playlist-vertical .vjs-playlist-item.vjs-selected .vjs-playlist-thumbnail:before{
+    content: '';
+    position: absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    border:2px solid  #198cff;
+    z-index:2;
+    box-sizing: border-box;
+}
+
+.vjs-playlist-vertical .vjs-playlist-thumbnail-placeholder {
+    height: 100px
+}
+
+.vjs-playlist-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden
+}
+
+.vjs-playlist-horizontal img {
+    min-width: 100px;
+    height: 100%
+}
+
+.vjs-playlist-horizontal .vjs-playlist-item-list {
+    height: 100%;
+    white-space: nowrap
+}
+
+.vjs-playlist-horizontal .vjs-playlist-item {
+    display: inline-block;
+    height: 100%;
+    margin-right: 5px
+}
+
+.vjs-playlist-horizontal .vjs-playlist-thumbnail {
+    display: block;
+    height: 100%
+}
+
+.vjs-playlist-horizontal .vjs-playlist-thumbnail-placeholder {
+    height: 100%;
+    width: 180px
+}
+.vjs-playlist-vertical .vjs-playlist-thumbnail .face{
+    width:100%;
+    height:100%;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.vjs-playlist.vjs-ad-playing {
+    overflow: hidden
+}
+
+.vjs-playlist.vjs-ad-playing.vjs-csspointerevents {
+    pointer-events: none;
+    overflow: auto
+}
+
+.vjs-playlist.vjs-ad-playing.vjs-csspointerevents .vjs-playlist-ad-overlay {
+    pointer-events: auto
+}
+
+.vjs-playlist.vjs-ad-playing .vjs-playlist-ad-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.vjs-playlist {
+    font-size: 14px
+}
+
+.vjs-playlist .vjs-playlist-description {
+    height: 42px;
+    line-height: 21px
+}
+
+.vjs-mouse.vjs-playlist {
+    font-size: 15px
+}
+
+.vjs-mouse.vjs-playlist .vjs-playlist-description {
+    height: 45px;
+    line-height: 23px
+}
+@media screen and (max-width: 500px) {
+.vjs-playlist .vjs-playlist-item-list{
+    padding:4px;
+}
+.vjs-playlist-vertical .vjs-playlist-item{
+    padding:4px;
+    width: 33.33%;
+    height: 100px;
+}
+    .vjs-playlist .vjs-playlist-now-playing-text{
+        font-size:12px;
+    }
+    .vjs-playlist .vjs-playlist-time{
+        font-size:10px;
+    }
+    .vjs-playlist .vjs-playlist-name{
+        font-size:12px;
+    }
+
+
+
+}

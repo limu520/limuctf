@@ -1,0 +1,97 @@
+.ax-complete [hidden] {
+    display: none;
+}
+
+.ax-complete .visually-hidden {
+    position: absolute;
+}
+
+.ax-complete {
+    display: inline-block;
+    position: relative;
+}
+
+.ax-complete > input {
+    display: block;
+}
+
+.ax-complete > ul {
+    position: absolute;
+    left: 0;
+	top:calc(100% + 7px);
+    z-index: 1;
+    min-width: 100%;
+    box-sizing: border-box;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+}
+
+.ax-complete > ul:empty {
+    display: none;
+}
+
+.ax-complete > ul {
+	border-radius: 3px;
+	margin:0;
+	background:#fff;
+	border: 1px solid rgba(0,0,0,.3);
+	box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+	transition: .3s ease;
+	transform-origin: 28px -28px;
+}
+	.ax-complete > ul[hidden],
+	.ax-complete > ul:empty {
+		opacity: 0;
+		transform: scale(0);
+		display: block;
+	}
+
+
+	/* Pointer */
+	.ax-complete > ul:before {
+		content: "";
+		position: absolute;
+		top: -6px;
+		left: 1em;
+		width: 0;
+		height: 0;
+		padding: 5px;
+		background: white;
+		border: inherit;
+		border-right: 0;
+		border-bottom: 0;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+	.ax-complete > ul > li {
+		position: relative;
+		padding: .2em .5em;
+		cursor: pointer;
+	}
+	
+	.ax-complete > ul > li:hover {
+		background: #f0f0f0;
+		color: black;
+	}
+	
+	.ax-complete > ul > li[aria-selected="true"] {
+		background: #333;
+		color: white;
+	}
+	
+		.ax-complete mark {
+			background: hsl(65, 100%, 50%);
+		}
+		
+		.ax-complete li:hover mark {
+			background: hsl(68, 100%, 41%);
+		}
+		
+		.ax-complete li[aria-selected="true"] mark {
+			background: hsl(86, 100%, 21%);
+			color: inherit;
+		}
+/*# sourceMappingURL=ax-complete.css.map */

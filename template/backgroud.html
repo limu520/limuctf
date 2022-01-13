@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="wap-font-scale" content="no" />
+    <meta name="viewport" content="user-scalable=no, width=device-width" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>页面标题</title>
+    <meta name="keywords" content="页面关键字" />
+    <meta name="description" content="页面描述" />
+    <link href="https://at.alicdn.com/t/font_1551254_rxrrzgz2kjc.css" rel="stylesheet" type="text/css" />
+    <link href="https://src.axui.cn/src/css/ax.css" rel="stylesheet" type="text/css">
+    <link href="https://src.axui.cn/src/css/ax-response.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <header class="ax-header">
+        <div class="ax-row">
+            <div class="ax-col"><a href="###" class="ax-logo"><img
+                        src="https://limublog.oss-cn-hangzhou.aliyuncs.com/ctf/photo_2022-01-13_15-39-16.jpg" /></a></div>
+            <div class="ax-nav">
+
+                <div class="ax-item ax-grade"><a href="/mgr" class="ax-text">监控面板</a><span class="ax-line"></span></div>
+
+                <div class="ax-item ax-grade"><a href="/user_mgr" class="ax-text">用户管理</a><span class="ax-line"></span></div>
+
+                <div class="ax-item ax-grade"><a href="/topic_mgr" class="ax-text">题目管理</a><span class="ax-line"></span></div>
+
+                <div class="ax-item ax-grade"><a href="/mechine_mgr" class="ax-text">主机管理</a><span class="ax-line"></span></div>
+
+                <div class="ax-item ax-grade"><a href="/con_mgr" class="ax-text">容器管理</a><span class="ax-line"></span></div>
+
+                <div class="ax-item ax-grade"><a href="ann_mgr" class="ax-text">公告管理</a><span class="ax-line"></span></div>
+
+            </div>
+        </div>
+    </header>
+    <div class="ax-space-header"></div>
+    <br>
+    {{.broad_data}}
+
+    {{.hidden_html}}
+    <script src="https://src.axui.cn/src/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="https://src.axui.cn/src/js/ax.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://src.axui.cn/src/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            $('#train').DataTable({
+                sDom: "lfrtip",
+            });
+        });
+        
+    {{.js_data}}
+
+        
+
+    </script>
+
+</body>
+
+</html>

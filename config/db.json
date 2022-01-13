@@ -1,0 +1,10 @@
+{
+    "db_name":"limuctf",
+    "db_address":"127.0.0.1",
+    "db_port":"3307",
+    "db_user":"root",
+    "db_password":"123456789"
+}
+
+
+

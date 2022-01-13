@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>页面标题</title>
+    <meta name="keywords" content="CTF limu" />
+    <meta name="description" content="Limuctf" />
+    <link href="https://at.alicdn.com/t/font_1551254_rxrrzgz2kjc.css" rel="stylesheet" type="text/css" />
+    <link href="https://src.axui.cn/src/css/ax.css" rel="stylesheet" type="text/css">
+    <link href="https://src.axui.cn/src/css/ax-response.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <a href="###" class="ax-btn ax-primary" id="open-win04" title="1">1</a>
+    <a href="###" class="ax-btn ax-primary" id="open-win04" title="2">2</a>
+    <a href="###" class="ax-btn ax-primary" id="open-win04" title="3">3</a>
+
+
+    <!--窗口-表单3-->
+    <div class="ax-window" data-mask="true" id="form03">
+        <form action="/api/upload" method="post">
+            <div class="ax-window-overlay"></div>
+            <div class="ax-window-contain">
+                <a href="###" class="ax-window-close"><i class="ax-iconfont ax-icon-close"></i></a>
+                <div class="ax-window-title">新增题目</div>
+                <div class="ax-break-line"></div>
+                <div class="ax-window-content">
+                    <div class="ax-padding ax-outer-tel">
+
+                        <div class="ax-form-group">
+                            <div class="ax-flex-row">
+                                题目名称：
+                                <div class="ax-form-con">
+                                    <div class="ax-form-input"><input type="text" id="name"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ax-form-group" style="margin-top: 10px;">
+                            <div class="ax-flex-row">
+                                题目类型：
+                                <div class="ax-form-con">
+                                    <div class="ax-form-input">
+                                        <select class="ax-select" id="topictype">
+                                            <option value="">请选择..</option>
+                                            <option value="Basic">Basic</option>
+                                            <option value="Web">Web</option>
+                                            <option value="Pwn">Pwn</option>
+                                            <option value="Crypto">Crypto</option>
+                                            <option value="Reverse">Reverse</option>
+                                            <option value="Misc">Misc</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ax-form-group" style="margin-top: 10px;">
+                            <div class="ax-flex-row">
+                                靶场类型：
+                                <div class="ax-flex-block">
+                                    <div class="ax-row">
+                                        <div class="ax-col ax-col-8"><label class="ax-chera ax-lg"><input name="fix-egg"
+                                                    value="1" checked="" id="nodynamic"
+                                                    type="radio"><span>静态靶场</span></label></div>
+                                        <span class="ax-gutter-md"></span>
+                                        <div class="ax-col ax-col-8"><label class="ax-chera ax-lg"><input name="fix-egg"
+                                                    value="0" id="dynamic" type="radio"><span>动态靶场</span></label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ax-form-group" style="margin-top: 10px;">
+                            <div class="ax-flex-row">
+                                主机选择：
+                                <div class="ax-form-con">
+                                    <div class="ax-form-input">
+                                        <select class="ax-select" id="mechine" disabled="">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ax-form-group" style="margin-top: 10px;">
+                            <div class="ax-flex-row">
+                                容器选择：
+                                <div class="ax-form-con">
+                                    <div class="ax-form-input">
+                                        <select class="ax-select" id="container" disabled="">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ax-form-group" style="margin-top: 10px;">
+                            <div class="ax-flex-row">
+                                开放端口：
+                                <div class="ax-form-con">
+                                    <div class="ax-form-input"><input type="text" id="port" disabled=""></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ax-form-group" style="margin-top: 10px;">
+                            <div class="ax-flex-row">
+                                静态Flag：
+                                <div class="ax-form-con">
+                                    <div class="ax-form-input"><input type="text" id="flag"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ax-form-group" style="margin-top: 10px;">
+                            <div class="ax-flex-row">
+                                题目分数：
+                                <div class="ax-form-con">
+                                    <div class="ax-form-input"><input type="text" id="score"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ax-form-group" style="margin-top: 10px;">
+                            <div class="ax-flex-row">
+                                题目附件：
+                                <div class="ax-form-con">
+                                    <div class="ax-form-input">
+                                        <div class="ax-file" data-text="选择文件">
+                                            <input type="file" id="attachement" name="attachement">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ax-form-group" style="margin-top: 10px;">
+                            <div class="ax-flex-row">
+                                题目描述：
+                                <div class="ax-form-con">
+                                    <div class="ax-form-input"><textarea placeholder="题目描述" id="text"></textarea></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="ax-break-line"></div>
+                <div class="ax-padding ax-window-operate">
+                    <div class="ax-row">
+                        <div class="ax-btns">
+                            <a class="ax-btn ax-text ax-ignore ax-window-close">取消</a>
+                            <a class="ax-btn ax-primary" id="submit">确定</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+    <script src="https://src.axui.cn/src/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="https://src.axui.cn/src/js/ax.min.js" type="text/javascript"></script>
+    <script type='text/javascript'>
+        $("#dynamic").click(function () {
+            $.post("/api/getmechine", function (data, status) {
+                $("#mechine").html(`<option value="">请选择..</option>` + data.data)
+            });
+            $("#flag").attr("disabled", true);
+            $("#mechine").attr("disabled", false);
+            $("#container").attr("disabled", true);
+            $("#port").attr("disabled", true);
+            $("#dynamic").attr("value", 1)
+            $("#nodynamic").attr("value", 0)
+        });
+        $("#nodynamic").click(function () {
+            $("#flag").attr("disabled", false);
+            $("#mechine").attr("disabled", true);
+            $("#container").attr("disabled", true);
+            $("#port").attr("disabled", true);
+            $("#dynamic").attr("value", 0)
+            $("#nodynamic").attr("value", 1)
+        });
+        $("#mechine").change(function () {
+            var selected = $(this).children('option:selected').val()
+            $("#container").attr("disabled", false);
+            $("#port").attr("disabled", false);
+            $.post("/api/gettopic", { mechine_id: selected }, function (data, status) {
+                $("#container").html(`<option value="">请选择..</option>` + data.data)
+            });
+        });
+        //提交文件
+        $("#submit").click(function () {
+            var topicname = document.getElementById("name").value
+            var topictype = document.getElementById("topictype").value
+            var text = document.getElementById("text").value
+            var score = document.getElementById("score").value
+            var files = $('#attachement').prop('files');
+            var data = new FormData();
+            data.append('name', topicname);
+            data.append('type', topictype);
+            data.append('text', text);
+            data.append('score',score);
+            data.append('uploadfile', files[0]);
+            if (document.getElementById("dynamic").value == 1) {
+                var mechine = document.getElementById("mechine").value
+                var container = document.getElementById("container").value
+                var port = document.getElementById("port").value
+                data.append('ctype', "1");
+                data.append('mechine', mechine);
+                data.append('container', container);
+                data.append('port', port);
+            } else {
+                var flag = document.getElementById("flag").value
+                data.append('ctype', "0");
+                data.append('flag', flag);
+            }
+            console.log(data)
+            $.ajax({
+                url: '/api/newtopic',
+                type: 'POST',
+                data: data,
+                cache: false,
+                processData: false,
+                contentType: false
+            
+            });
+        });
+
+
+
+            $("[id=open-win04]").click((event) => {
+                //获取主机api，获取主机存在镜像的api
+                // console.log($(event.target).attr('title')); //获取所点击的自定义值
+                $("#form03").addClass("ax-window-show");
+            });
+    </script>
+</body>
+
+
+</html>
