@@ -86,7 +86,11 @@ func Delann(c *gin.Context) {
 func Delcon(c *gin.Context) {
 	con_id := c.PostForm("con_id")
 	var con []model.Flags
+	var mechine []model.Mechine
 	db := model.LinkDb()
+	db.Where("ID = ?", con_id).First(&con)
+	db.Where("ID =  ?", con[0].Mechine_id).First(&mechine)
+	utils.D_del("tcp://"+mechine[0].Url, con[0].Container_id)
 	err := db.Where("ID = ?", con_id).Delete(&con).Error
 	sqlDb, _ := db.DB()
 	defer sqlDb.Close()
