@@ -126,11 +126,18 @@ func Getflag(c *gin.Context) {
 		data = "Flag正确"
 		solve := model.Solved{Username: sessiona.(string), Solve_time: &time, Topic_id: flag[0].Topic_id}
 		db.Create(&solve)
-		sqlDb, _ := db.DB()
-		defer sqlDb.Close()
+		var topic []model.Topics
+		var user []model.User
+		db.Where("ID = ?", flag[0].Topic_id).First(&topic)
+		db.Where("username = ?", sessiona.(string)).First(&user)
+		score := user[0].Stores
+		db.Model(&user).Where("ID = ?", user[0].ID).Update("store", score+topic[0].Score)
+
 	} else {
 		data = "Flag错误"
 	}
+	sqlDb, _ := db.DB()
+	defer sqlDb.Close()
 	c.JSON(200, gin.H{
 		data: data,
 	})

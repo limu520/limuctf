@@ -57,7 +57,7 @@ func Topic(c *gin.Context) {
 	// data1 + 名字 + data2 + 标题 + data3 + 分数 +data4
 	db.Where("type = ?", topic_type).Find(&topic)
 	for _, value := range topic {
-		topic_data = topic_data + topic_data1 + value.Name + topic_data2 + value.Type + topic_data3 + value.Name + topic_data4 + value.Score + topic_data5
+		topic_data = topic_data + topic_data1 + value.Name + topic_data2 + value.Type + topic_data3 + value.Name + topic_data4 + string(value.Score) + topic_data5
 	}
 	//fmt.Printf(topic_type)
 	sqlDb, _ := db.DB()

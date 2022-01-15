@@ -767,7 +767,7 @@ func Topic_mgr(c *gin.Context) {
 		} else {
 			dynamic = "是"
 		}
-		data = data + fmt.Sprintf("<tr><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>", value.ID, value.Name, value.Image_name, value.Mechine_id, value.Private_port, value.Type, value.Content, value.Attachment, value.Flag, value.Score, dynamic)
+		data = data + fmt.Sprintf("<tr><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%d</td><td>%s</td></tr>", value.ID, value.Name, value.Image_name, value.Mechine_id, value.Private_port, value.Type, value.Content, value.Attachment, value.Flag, value.Score, dynamic)
 	}
 	back_btn := `&nbsp;&nbsp;<a id="form11" class="ax-btn ax-danger">删除题目</a>&nbsp;&nbsp<a id="form12" class="ax-btn ax-success">新增题目</a>&nbsp;<br><br>`
 	broad_data1 := `<table id="train">

@@ -194,9 +194,10 @@ func Newtopic(c *gin.Context) {
 	} else {
 		fmt.Printf("error")
 	}
+	rescore, _ := strconv.Atoi(score)
 	fmt.Printf(name, topictype, topictext, score, mechine, container, port, flag)
 	db := model.LinkDb()
-	topic := model.Topics{Name: name, Image_name: container, Mechine_id: mechine, Private_port: port, Type: topictype, Content: topictext, Flag: flag, Score: score, Dynamic: ctype, Attachment: topicurl}
+	topic := model.Topics{Name: name, Image_name: container, Mechine_id: mechine, Private_port: port, Type: topictype, Content: topictext, Flag: flag, Score: rescore, Dynamic: ctype, Attachment: topicurl}
 	db.Create(&topic)
 
 	sqlDb, _ := db.DB()

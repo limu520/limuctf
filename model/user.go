@@ -32,7 +32,7 @@ type Topics struct {
 	Content      string
 	Attachment   string
 	Flag         string
-	Score        string
+	Score        int
 	Dynamic      string
 }
 
