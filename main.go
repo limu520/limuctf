@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	con "limuctf/controller"
 	"limuctf/utils"
 
@@ -13,6 +14,15 @@ import (
 func main() {
 	//调试模式
 	gin.SetMode("debug")
+
+	//初始化管理用户(可以没有管理用户)
+	mgr_json := []byte(utils.Readfile("config/mgr.json"))
+	name := jsoniter.Get(mgr_json, "username").ToString()
+	passwd := jsoniter.Get(mgr_json, "password").ToString()
+	if name == "" && passwd == "" {
+		fmt.Println("未发现管理员用户，请尽快创建管理员用户\n管理用户配置文件位于config目录下的mgr.json")
+	}
+
 	r := gin.Default()
 	r.LoadHTMLGlob("template/*")  //这里是引入模板文件
 	r.Static("/static", "static") //引入静态目录
@@ -95,6 +105,7 @@ func main() {
 		api.POST("/gettopic", con.Gettopic)
 
 	}
+
 	config_file := utils.Readfile("config/web.json")
 	config_json := []byte(config_file)
 	ip_port := jsoniter.Get(config_json, "port").ToString()
