@@ -10,7 +10,7 @@ import (
 
 //登陆
 func Signin(c *gin.Context) {
-	Nullsession(c, "username", "container_id")
+	Nullsession(c, "username", "container_id", "user_id")
 	username := c.PostForm("username")
 	password := c.PostForm("password")
 	db := model.LinkDb()
@@ -18,7 +18,7 @@ func Signin(c *gin.Context) {
 	if err := db.Where(" username = ? ", username).First(&signer).Error; err == nil {
 		if signer[0].Password == password {
 			c.String(http.StatusOK, "success")
-			Setsession(c, "username", username, "container_id", "null")
+			Setsession(c, "username", username, "container_id", "null", "user_id", string(signer[0].ID))
 		} else {
 			c.String(http.StatusOK, "密码错误")
 		}
@@ -32,7 +32,7 @@ func Signin(c *gin.Context) {
 //注册
 
 func Register(c *gin.Context) {
-	Nullsession(c, "username", "container_id")
+	Nullsession(c, "username", "container_id", "user_id")
 	username := c.PostForm("username")
 	password := c.PostForm("password")
 	conform := c.PostForm("conform")
@@ -61,6 +61,6 @@ func Register(c *gin.Context) {
 
 //注销
 func Logout(c *gin.Context) {
-	Nullsession(c, "username", "container_id")
+	Nullsession(c, "username", "container_id", "user_id")
 	c.Redirect(http.StatusFound, "/")
 }

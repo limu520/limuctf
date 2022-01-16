@@ -11,6 +11,9 @@ import (
 
 //用户管理
 func User_mgr(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.Redirect(http.StatusFound, "/")
+	}
 	db := model.LinkDb()
 	var user []model.User
 	db.Find(&user)
@@ -213,6 +216,9 @@ func User_mgr(c *gin.Context) {
 
 //公告管理
 func Ann_mgr(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.Redirect(http.StatusFound, "/")
+	}
 	db := model.LinkDb()
 	var ann []model.Announcement
 	db.Find(&ann)
@@ -413,6 +419,9 @@ func Ann_mgr(c *gin.Context) {
 
 //容器管理
 func Con_mgr(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.Redirect(http.StatusFound, "/")
+	}
 	db := model.LinkDb()
 	var con []model.Flags
 	db.Find(&con)
@@ -520,6 +529,9 @@ func Con_mgr(c *gin.Context) {
 
 //主机管理
 func Mechine_mgr(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.Redirect(http.StatusFound, "/")
+	}
 	db := model.LinkDb()
 	var mechine []model.Mechine
 	db.Find(&mechine)
@@ -756,6 +768,9 @@ func Mechine_mgr(c *gin.Context) {
 
 //题目管理
 func Topic_mgr(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.Redirect(http.StatusFound, "/")
+	}
 	db := model.LinkDb()
 	var topic []model.Topics
 	db.Find(&topic)

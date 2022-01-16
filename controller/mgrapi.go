@@ -13,6 +13,9 @@ import (
 
 //删除用户
 func Deluser(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.JSON(400, gin.H{})
+	}
 	username := c.PostForm("username")
 	var user []model.User
 	var sign []model.Sign
@@ -32,6 +35,9 @@ func Deluser(c *gin.Context) {
 
 //修改密码
 func Chpasswd(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.JSON(400, gin.H{})
+	}
 	username := c.PostForm("username")
 	passwd := c.PostForm("password")
 	fmt.Println(username)
@@ -51,6 +57,9 @@ func Chpasswd(c *gin.Context) {
 
 //新增公告
 func Newann(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.JSON(400, gin.H{})
+	}
 	title := c.PostForm("title")
 	content := c.PostForm("context")
 	update_time := time.Now()
@@ -69,6 +78,9 @@ func Newann(c *gin.Context) {
 
 //删除公告
 func Delann(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.JSON(400, gin.H{})
+	}
 	ann_id := c.PostForm("ann_id")
 	var ann []model.Announcement
 	db := model.LinkDb()
@@ -84,6 +96,9 @@ func Delann(c *gin.Context) {
 
 //删除容器   docker容器操作未完善
 func Delcon(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.JSON(400, gin.H{})
+	}
 	con_id := c.PostForm("con_id")
 	var con []model.Flags
 	var mechine []model.Mechine
@@ -103,6 +118,9 @@ func Delcon(c *gin.Context) {
 
 //新增主机
 func Newmechine(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.JSON(400, gin.H{})
+	}
 	username := c.PostForm("mechine_name")
 	urls := c.PostForm("mechine_url")
 	min_port := c.PostForm("mechine_minport")
@@ -124,6 +142,9 @@ func Newmechine(c *gin.Context) {
 
 //删除主机
 func Delmechine(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.JSON(400, gin.H{})
+	}
 	mechine_id := c.PostForm("mechine_id")
 	var mechine []model.Mechine
 	db := model.LinkDb()
@@ -139,6 +160,9 @@ func Delmechine(c *gin.Context) {
 
 //获取主机列表
 func Getmechine(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.JSON(400, gin.H{})
+	}
 	db := model.LinkDb()
 	var mechine []model.Mechine
 	db.Find(&mechine)
@@ -155,6 +179,9 @@ func Getmechine(c *gin.Context) {
 
 //获取题目列表
 func Gettopic(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.JSON(400, gin.H{})
+	}
 	mechine_id := c.PostForm("mechine_id")
 	db := model.LinkDb()
 	var mechine []model.Mechine
@@ -169,6 +196,9 @@ func Gettopic(c *gin.Context) {
 
 //新增题目
 func Newtopic(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.JSON(400, gin.H{})
+	}
 	ctype := c.PostForm("ctype")
 	name := c.PostForm("name")
 	topictype := c.PostForm("type")
@@ -209,6 +239,9 @@ func Newtopic(c *gin.Context) {
 
 //删除题目
 func Deltopic(c *gin.Context) {
+	if Getsessiona(c, "user_id").(string) != "1" {
+		c.JSON(400, gin.H{})
+	}
 	topic_id := c.PostForm("topic_id")
 	var topic []model.Topics
 	db := model.LinkDb()

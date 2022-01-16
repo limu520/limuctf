@@ -14,7 +14,7 @@ import (
 //获取题目内容
 func Getcontent(c *gin.Context) {
 	sessiona := Getsessiona(c, "username")
-	sessionb := Getsessionb(c, "container_id")
+	sessionb := Getsessiona(c, "container_id")
 	if sessiona == nil {
 		c.Redirect(http.StatusFound, "/")
 	}
@@ -101,7 +101,8 @@ func Game(c *gin.Context) {
 	defer sqlDb.Close()
 	url := mechine[0].Url
 	url_num := strings.Index(url, ":")
-	Setsession(c, "username", sessiona.(string), "container_id", "http://"+url[:url_num]+":"+reopen_port)
+	user_id := Getsessiona(c, "user_id")
+	Setsession(c, "username", sessiona.(string), "container_id", "http://"+url[:url_num]+":"+reopen_port, "user_id", user_id.(string))
 	c.JSON(200, gin.H{
 		"status":    status,
 		"topic_url": "http://" + url[:url_num] + ":" + reopen_port,
