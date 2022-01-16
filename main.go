@@ -41,7 +41,7 @@ func main() {
 	redis_address := jsoniter.Get(redis_json, "redis_address").ToString()
 	redis_password := jsoniter.Get(redis_json, "redis_password").ToString()
 	store, _ := redis.NewStore(link_max, links_way, redis_address, redis_password, []byte("maybe_used_something_intersting"))
-	sessionName := []string{"a", "b"}
+	sessionName := []string{"a"}
 	r.Use(sessions.SessionsMany(sessionName, store))
 
 	// 为 multipart forms 设置较低的内存限制 (默认是 32 MiB)
