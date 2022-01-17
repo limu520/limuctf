@@ -31,7 +31,7 @@ func init() {
 	if db.Migrator().HasTable(&Mechine{}) == false {
 		db.AutoMigrate(&Mechine{})
 	}
-
+	//初始化管理用户(可以没有管理用户)
 	var sign []Sign
 	username := ""
 	password := ""
