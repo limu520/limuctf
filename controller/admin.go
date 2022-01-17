@@ -3,6 +3,7 @@ package controller
 import (
 	"limuctf/model"
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -18,7 +19,8 @@ func Signin(c *gin.Context) {
 	if err := db.Where(" username = ? ", username).First(&signer).Error; err == nil {
 		if signer[0].Password == password {
 			c.String(http.StatusOK, "success")
-			Setsession(c, "username", username, "container_id", "null", "user_id", string(signer[0].ID))
+			id := strconv.Itoa(signer[0].ID)
+			Setsession(c, "username", username, "container_id", "null", "user_id", id)
 		} else {
 			c.String(http.StatusOK, "密码错误")
 		}
