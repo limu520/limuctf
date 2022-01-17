@@ -2,6 +2,7 @@ package main
 
 import (
 	con "limuctf/controller"
+	"limuctf/model"
 	"limuctf/utils"
 
 	"github.com/gin-contrib/sessions"
@@ -96,7 +97,7 @@ func main() {
 		api.POST("/gettopic", con.Gettopic)
 
 	}
-
+	go model.Dockerclean()
 	config_file := utils.Readfile("config/web.json")
 	config_json := []byte(config_file)
 	ip_port := jsoniter.Get(config_json, "port").ToString()
