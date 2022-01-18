@@ -1,7 +1,6 @@
 package model
 
 import (
-	"fmt"
 	"limuctf/utils"
 	"time"
 )
@@ -17,7 +16,6 @@ func Dockerclean() {
 			result1 := db.Where("mechine_id = ?", value.ID).Find(&flag)
 			if result1.RowsAffected != 0 {
 				for _, flags := range flag {
-					fmt.Println(time.Until(*flags.Create_time).Minutes())
 					if time.Until(*flags.Create_time).Minutes() < -30 {
 						utils.D_del("tcp://"+value.Url, flags.Container_id)
 						db.Delete(&flags)
