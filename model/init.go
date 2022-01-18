@@ -33,8 +33,8 @@ func init() {
 	}
 	//初始化管理用户(可以没有管理用户)
 	var sign []Sign
-	username := ""
-	password := ""
+	username := "admin"
+	password := "admin"
 	result := db.Where("ID = 1").Find(&sign)
 	if result.RowsAffected == 0 {
 		fmt.Print("未发现管理员用户，请创建管理员用户\n请输入管理员用户名：")

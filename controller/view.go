@@ -7,6 +7,7 @@ import (
 	"html/template"
 	"limuctf/model"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -57,7 +58,8 @@ func Topic(c *gin.Context) {
 	// data1 + 名字 + data2 + 标题 + data3 + 分数 +data4
 	db.Where("type = ?", topic_type).Find(&topic)
 	for _, value := range topic {
-		topic_data = topic_data + topic_data1 + value.Name + topic_data2 + value.Type + topic_data3 + value.Name + topic_data4 + string(value.Score) + topic_data5
+		rescore := strconv.Itoa(value.Score)
+		topic_data = topic_data + topic_data1 + value.Name + topic_data2 + value.Type + topic_data3 + value.Name + topic_data4 + rescore + topic_data5
 	}
 	//fmt.Printf(topic_type)
 	sqlDb, _ := db.DB()
