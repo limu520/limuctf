@@ -41,7 +41,8 @@
     <header class="ax-header">
         <div class="ax-row">
             <div class="ax-col"><a href="/" class="ax-logo"><img
-                        src="https://limublog.oss-cn-hangzhou.aliyuncs.com/ctf/photo_2022-01-13_15-39-16.jpg" /></a></div>
+                        src="https://limublog.oss-cn-hangzhou.aliyuncs.com/ctf/photo_2022-01-13_15-39-16.jpg" /></a>
+            </div>
             <div class="ax-nav">
                 <div class="ax-item ax-grade"><a href="/" class="ax-text">首页</a><span class="ax-line"></span></div>
 
@@ -297,11 +298,19 @@
                         </div>
                     </div>
                     <br><br><br>
-                    <div style="text-align: center;">
-                        <a href="" style="font-size: 20px;" id="topic_addr">题目地址:</a>
+
+
+
+                    <div style="text-align: center; border:1px solid;">
+                        <br>
+                        <a style="font-size: 20px;">靶机信息</a>
                         <br><br>
+                        <a href="" style="font-size: 20px;" id="topic_addr"></a>
+                        <br>
                         <a class="ax-btn ax-success" id="startcon" name="">启动容器</a>
+                        <br><br>
                     </div>
+
                     <br>
                     <div class="ax-form-group">
                         <div class="ax-flex-row">
@@ -314,6 +323,9 @@
                                 id="submitflag">提交Flag</button>
                         </div>
                     </div>
+
+
+
                     <br><br>
                 </div>
             </div>
@@ -395,7 +407,7 @@
                 $("#topic2").html(data.content);
                 $("#topic3").html(data.upload);
                 $("#startcon").attr('name', name);
-                $("#topic_addr").html("题目地址： " + data.status);
+                $("#topic_addr").html(data.status);
 
             });
             $("#form03").addClass("ax-window-show");
@@ -406,7 +418,7 @@
             console.log(name);
             $.post("/game", { name: name }, function (data, status) {
                 $("topic_addr").attr('href', data.topic_url);
-                $("#topic_addr").html("题目地址： " + data.topic_url);
+                $("#topic_addr").html(data.topic_url);
             });
         });
 
@@ -415,7 +427,7 @@
         $("#submitflag").click((event) => {
             var flag = document.getElementById("getflag").value
             console.log(flag)
-            $.post("/flag", {flag:flag},function (data,status) {
+            $.post("/flag", { flag: flag }, function (data, status) {
                 alert(data.data)
             });
         });
