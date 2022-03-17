@@ -133,7 +133,8 @@ func Newmechine(c *gin.Context) {
 	fmt.Println(err)
 	sqlDb, _ := db.DB()
 	defer sqlDb.Close()
-	if (username == "" || urls == "") || (min_port == "" || max_port == "") || err != nil {
+	if (username == "" || urls == "") || (min_port == "" || max_port == "") {
+		fmt.Println("错误")
 		c.String(http.StatusOK, "输入错误")
 	} else {
 		c.String(http.StatusOK, "success")

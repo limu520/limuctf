@@ -720,6 +720,7 @@ func Mechine_mgr(c *gin.Context) {
 				}
 				else {
 					alert("主机删除成功")
+					location.reload();
 				}
 			}
 		}
@@ -751,6 +752,7 @@ func Mechine_mgr(c *gin.Context) {
 				}
 				else {
 					alert("新增主机成功")
+					location.reload();
 				}
 			}
 		}
@@ -1087,7 +1089,14 @@ func Topic_mgr(c *gin.Context) {
 			data: data,
 			cache: false,
 			processData: false,
-			contentType: false	
+			contentType: false,
+			success: function () {
+				alert("题目新增成功！！！")
+				location.reload();
+			},
+			error: function () {
+				alert("题目新增失败");
+			}
 		});
 
 	});`

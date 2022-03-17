@@ -1,8 +1,6 @@
 package model
 
 import (
-	"fmt"
-
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -33,16 +31,17 @@ func init() {
 	}
 	//初始化管理用户(可以没有管理用户)
 	var sign []Sign
-	username := "admin"
-	password := "admin"
+	// username := "admin"
+	// password := "admin"
 	result := db.Where("ID = 1").Find(&sign)
 	if result.RowsAffected == 0 {
-		fmt.Print("未发现管理员用户，请创建管理员用户\n请输入管理员用户名：")
-		fmt.Scanln("%s", username)
-		fmt.Print("请输入管理员密码：")
-		fmt.Scanln("%s", password)
-		signs := Sign{Username: username, Password: password}
-		users := User{Username: username, Stores: 0}
+		// fmt.Print("未发现管理员用户，请创建管理员用户\n请输入管理员用户名：")
+		// fmt.Scanln("%s", username)
+		// fmt.Print("请输入管理员密码：")
+		// fmt.Scanln("%s", password)
+
+		signs := Sign{Username: "admin", Password: "admin"}
+		users := User{Username: "admin", Stores: 0}
 		db.Create(&signs)
 		db.Create(&users)
 	}

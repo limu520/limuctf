@@ -60,10 +60,10 @@ func D_del(d_url string, con_id string) {
 	ctx := context.Background()
 	dclient, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation(), client.WithHost(d_url))
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 	del_err := dclient.ContainerRemove(ctx, con_id, types.ContainerRemoveOptions{Force: true})
 	if del_err != nil {
-		panic(err)
+		fmt.Println(del_err)
 	}
 }
